@@ -1,9 +1,15 @@
 <template>
-  <h1>{{ msg }}</h1>
+  <h1
+    v-if="msg"
+    class="message"
+    @click="log">
+    {{ msg }}
+  </h1>
+  <Hello />
 </template>
 
 <script>
-import Hello from "./components/Hello.vue";
+import Hello from './components/Hello.vue';
 
 export default {
   components: {
@@ -11,9 +17,14 @@ export default {
   },
   data() {
     return {
-      msg: "Hello~",
+      msg: 'Hello~',
     };
   },
+  methods:{
+    log(){
+    
+    }
+  }
 };
 </script>
 
