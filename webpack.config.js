@@ -4,6 +4,12 @@ const HtmlPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+  resolve:{
+    extensions: ['.vue', '.js'],
+    alias: {
+      '~': path.resolve(__dirname, 'src') //~ 사용 시 src폴더부터 탐색 가능
+    }
+  },
   entry: './src/main.js', // 진입점
   output: {
     path: path.resolve(__dirname, 'dist'), // build, dist, public 으로 작성함.
@@ -17,8 +23,8 @@ module.exports = {
         use: 'vue-loader',
       },
       {
-        test: /\.css$/,
-        use: ['vue-style-loader', 'css-loader'], // 복수의 경우 배열로 선언. 먼저 해석이 되야하는 부분을 나중에 작성.
+        test: /\.s?css$/,
+        use: ['vue-style-loader', 'css-loader', 'sass-loader'], // 복수의 경우 배열로 선언. 먼저 해석이 되야하는 부분을 나중에 작성.
       },
     ],
   },
