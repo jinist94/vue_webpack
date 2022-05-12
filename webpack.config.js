@@ -13,6 +13,7 @@ module.exports = {
   entry: './src/main.js', // 진입점
   output: {
     path: path.resolve(__dirname, 'dist'), // build, dist, public 으로 작성함.
+    publicPath: '/',
     clean: true,
   },
 
@@ -39,7 +40,8 @@ module.exports = {
       ],
     }),
   ],
-  // devServer: {
-  //   port: 3040,
-  // },
+  devServer: {
+    historyApiFallback: true, // 기본적으로 index.html으로 Redirect
+    // port: 3040,
+  },
 };
