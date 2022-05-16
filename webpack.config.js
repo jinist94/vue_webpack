@@ -30,7 +30,7 @@ module.exports = {
       },
       {
         test: /\.s?css$/,
-        use: ['vue-style-loader', 'css-loader', 'sass-loader'], // 복수의 경우 배열로 선언. 먼저 해석이 되야하는 부분을 나중에 작성.
+        use: ['vue-style-loader', 'css-loader', 'sass-loader', 'postcss-loader'], // 복수의 경우 배열로 선언. 먼저 해석이 되야하는 부분을 나중에 작성.
       },
     ],
   },
